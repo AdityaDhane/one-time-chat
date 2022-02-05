@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>
+            one-time-chat
+        </title>
+        <link rel="stylesheet" href="css/index.css">
+    </head>
+    <body>
+        <div id="header">
+            <span>one time chat</span>
+        </div>
+        <div class="center">
+            <div class="container" class="center">
+
+                <form id='form' action="./chat" method="post">
+                    <div class="field">
+                        <label for="fname">Room:</label>
+                        <input type="text" id="room" name="room" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="lname">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div>
+                        <input id="submit" type="submit" value="Chat">
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+        <script>
+            form = document.getElementById('form');
+            submitButton = document.getElementById('submit');
+        </script>
+
+
+    </body>
+</html>

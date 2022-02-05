@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <title>
+            one-time-chat
+        </title>
+        <link rel="stylesheet" href="css/chat.css">
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+    </head>
+    <body>
+        <div id="header">
+            <span>one time chat</span>
+        </div>
+        <div class="container">
+
+            <div id="mainbar">
+                <div id="chat" class="scroll">
+                </div>
+                <div id="chat_reply">
+                    <div id="reply_box" class="center">
+                        <textarea id="reply" rows="1"></textarea>
+                    </div>
+                    
+                    <div id="send_box" class="center">
+                        <button id="send">send</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="sidebar">
+                <div>
+                    <h2 id="roomHeader" class="heading"></h2>
+                </div>
+                <div class="scroll">
+                    <h3 class="heading">Online Users</h3>
+                    <ul id="users">
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            const chatScreen = document.getElementById('chat');
+            const replyBox = document.getElementById('reply');
+            const sendButton = document.getElementById('send');
+            const roomHeader = document.getElementById('roomHeader');
+
+            const room = Cookies.get('room');
+            const user = Cookies.get('user');
+            roomHeader.innerHTML = room;
+            
+            const displayMessage = (text, name, dir='out') => {
+                const currentTime = new Date();
+                const timeString = currentTime.getHours() + ':' + currentTime.getMinutes();
+                
+                let ownMessage =    `<div class="message msg_${dir}">
+                                        <div class="msg">
+                                            ${text}
+                                        </div>
+                                        <div class="msg_meta">
+                                            ${name} - ${timeString}
+                                        </div>
+                                    </div>`
+                            
+                chatScreen.innerHTML += ownMessage;
+                chatScreen.scrollTop = chatScreen.scrollHeight;
+            }
+        </script>
+        
+        <script src="js/chat.js"></script>
+
+        <script>
+            window.onload = () => {
+                sendButton.onclick = () => {
+                    text = reply.value;
+                    reply.value = '';
+                    if(text !== '')
+                    {
+                        sendMessage(text);
+                    }
+                };
+                replyBox.addEventListener("keyup", (event) => {
+                    if(event.key === 'Enter')
+                    {
+                        send.click();
+                    }
+                })
+            };
+        </script>
+    </body>
+    </html>

@@ -1,16 +1,18 @@
 {
   "name": "one-time-chat",
   "version": "1.0.0",
-  "description": "backend of one-time-chat",
-  "main": "server.js",
+  "description": "one-time-chat",
+  "main": "app.js",
   "dependencies": {
+    "cookie-parser": "^1.4.6",
     "express": "^4.17.2",
+    "express-session": "^1.17.2",
     "socket.io": "^4.4.1"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node app.js"
   },
   "author": "",
   "license": "ISC"

@@ -2,29 +2,66 @@ body {
     margin: 0;
 }
 
-div.container {
-    border-radius: 1em;
-    background-color: #23272A;
-    border: 10px solid black;
-    height: 65%;
+#header {
+    color: #23272A;
+    font-size: 4em;
+    text-align: center;
+    margin: 2% auto;
     width: 60%;
-    margin: 5% auto;
+}
 
+div.container {
+    width: 60%;
+    height: 65%;
+    margin: auto;
+    
+    display: flex;
+}
+
+#mainbar {
+    background-color: #23272A;
+    border: 5px solid black;
+    border-radius: 1em;
+    width: 80%;
+    
     display: flex;
     flex-direction: column;
 }
+
+#sidebar {
+    background-color: #2C2F33;
+    border: 5px solid black;
+    border-radius: 1em;
+    border-left-width: 0;
+    width: 20%;
+    
+    padding: 2% 2% 0;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+#sidebar > div {
+    border-radius: 1em;
+    background-color: white;
+    box-shadow: 0.2em 0.2em grey;
+    margin-bottom: 10%;
+    padding: 2% 5%;
+    
+}
+
+#users {
+    font-style: italic;
+}
+
 
 #chat {
     height: 90%;
-    overflow-y: scroll;
     flex-grow: 9;
     padding: 1em 0;
-
+    
     display: flex;
     flex-direction: column;
-}
-#chat::-webkit-scrollbar {
-    display: none;
 }
 
 .message {
@@ -99,4 +136,15 @@ div.container {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.heading {
+    word-wrap: break-word;
+    text-align: center;
+}
+.scroll {
+    overflow-y: auto;
+    
+}
+.scroll::-webkit-scrollbar {
+    display: none;
 }
