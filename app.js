@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const server = require('http').Server(app);
+const PORT = 80
 
 const bodyParser = require('body-parser')
 const cookieParser = require("cookie-parser");
@@ -17,6 +18,6 @@ const socketHandler = require('./modules/socketHandler');
 socketHandler(server);
 
 
-server.listen(3000, () => {
-    console.log('App listening on port 3000')
+server.listen(PORT, () => {
+    console.log('App listening on port '+PORT)
 });
