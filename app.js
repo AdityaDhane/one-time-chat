@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const server = require('http').Server(app);
-const PORT = 80
+const PORT = process.env.PORT || 3000;
 
 const bodyParser = require('body-parser')
 const cookieParser = require("cookie-parser");
