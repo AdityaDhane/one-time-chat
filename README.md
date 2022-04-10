@@ -1,7 +1,7 @@
 # one-time-chat
 One time chat webapp using express.js and socket.io
 
-## [Website](https://breakdance.github.io/breakdance/) - deployed on heroku
+## [Website](https://one-time-chat1.herokuapp.com/) - deployed on heroku
 
 
 upcoming features:
